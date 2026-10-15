@@ -1,12 +1,11 @@
 package org.example.springbootrecapproject.controller;
 
 
-import org.example.springbootrecapproject.dto.MyToDoDTO;
-import org.example.springbootrecapproject.model.MyToDo;
+import org.example.springbootrecapproject.dto.MyTaskDTO;
+import org.example.springbootrecapproject.model.MyTask;
 import org.example.springbootrecapproject.service.MyService;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.ArrayList;
 import java.util.List;
 
 @RestController
@@ -20,33 +19,33 @@ public class MyController {
     }
 
     @GetMapping("api/todo")
-    public List<MyToDo> getToDo() {
-        return service.getToDo();//listMyApps;
+    public List<MyTask> getAllTasks() {
+        return service.getAllTasks();//listMyApps;
     }
 
-    @GetMapping("board/todo")
+  /*  @GetMapping("board/todo")
     public List<MyToDo> getBoardToDo() {
         return service.getBoardToDo();//listMyApps;
-    }
+    }*/
 
     @PostMapping("api/todo")
-    public MyToDo postToDo(@RequestBody MyToDoDTO myToDoDTO) {
-        return service.postToDo(myToDoDTO);
+    public MyTask createNewTask(@RequestBody MyTaskDTO myTaskDTO) {
+        return service.createNewTask(myTaskDTO);
     }
 
     @GetMapping("api/todo/{id}")
-    public MyToDo getToDoWithId(@PathVariable String id) {
-        return service.getToDoWithId(id);//listMyApps;
+    public MyTask getTaskById(@PathVariable String id) {
+        return service.getTaskById(id);//listMyApps;
     }
 
     @PutMapping("api/todo/{id}")
-    public MyToDo putToDo(@PathVariable String id,
-                          @RequestBody MyToDoDTO myToDoDTO) {
-        return service.putToDo(id, myToDoDTO);
+    public MyTask editTask(@PathVariable String id,
+                           @RequestBody MyTaskDTO myTaskDTO) {
+        return service.editTask(id, myTaskDTO);
     }
 
     @DeleteMapping("api/todo/{id}")
-    public void deleteToDo(@PathVariable String id) {
-        service.deleteToDo(id);
+    public void deleteTask(@PathVariable String id) {
+        service.deleteTask(id);
     }
 }

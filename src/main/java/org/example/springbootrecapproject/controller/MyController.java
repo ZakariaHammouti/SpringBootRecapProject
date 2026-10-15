@@ -45,4 +45,16 @@ public class MyController {
         return service.postToDo(myToDoDTO);
     }
 
+    @GetMapping("api/todo/{id}")
+    public MyToDo getToDoWithId(@PathVariable String id) {
+        System.out.println("getToDowithId");
+        return service.getToDoWithId(id);//listMyApps;
+    }
+
+    @PutMapping("api/todo/{id}")
+    public MyToDo putToDo(@PathVariable String id,
+                          @RequestBody MyToDoDTO myToDoDTO) {
+        System.out.println("Put From Client");
+        return service.putToDo(id, myToDoDTO);
+    }
 }

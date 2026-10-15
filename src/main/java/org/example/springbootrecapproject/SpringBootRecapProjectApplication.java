@@ -1,5 +1,6 @@
 package org.example.springbootrecapproject;
 
+import org.example.springbootrecapproject.model.MyTask;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
@@ -9,5 +10,6 @@ public class SpringBootRecapProjectApplication {
     public static void main(String[] args) {
         SpringApplication.run(SpringBootRecapProjectApplication.class, args);
     }
+
 
 }

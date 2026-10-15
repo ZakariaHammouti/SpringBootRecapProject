@@ -24,10 +24,6 @@ public class MyService {
         return repo.findAll();
     }
 
-  /*  public List<MyToDo> getBoardToDo() {
-        return repo.findAll();
-    }*/
-
     public MyTask createNewTask(MyTaskDTO myTaskDTO) {
         MyTask myTask = MyTask.builder().id(idService.randomId())
                 .description(myTaskDTO.description())

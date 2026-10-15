@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping("/")
+@RequestMapping()
 public class MyController {
 
     private final MyService service;
@@ -18,33 +18,28 @@ public class MyController {
         this.service = service;
     }
 
-    @GetMapping("api/todo")
+    @GetMapping("/api/todo")
     public List<MyTask> getAllTasks() {
         return service.getAllTasks();//listMyApps;
     }
 
-  /*  @GetMapping("board/todo")
-    public List<MyToDo> getBoardToDo() {
-        return service.getBoardToDo();//listMyApps;
-    }*/
-
-    @PostMapping("api/todo")
+    @PostMapping("/api/todo")
     public MyTask createNewTask(@RequestBody MyTaskDTO myTaskDTO) {
         return service.createNewTask(myTaskDTO);
     }
 
-    @GetMapping("api/todo/{id}")
+    @GetMapping("/api/todo/{id}")
     public MyTask getTaskById(@PathVariable String id) {
         return service.getTaskById(id);//listMyApps;
     }
 
-    @PutMapping("api/todo/{id}")
+    @PutMapping("/api/todo/{id}")
     public MyTask editTask(@PathVariable String id,
                            @RequestBody MyTaskDTO myTaskDTO) {
         return service.editTask(id, myTaskDTO);
     }
 
-    @DeleteMapping("api/todo/{id}")
+    @DeleteMapping("/api/todo/{id}")
     public void deleteTask(@PathVariable String id) {
         service.deleteTask(id);
     }

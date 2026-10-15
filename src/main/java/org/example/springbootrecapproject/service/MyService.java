@@ -24,13 +24,11 @@ public class MyService {
     }
 
     public List<MyToDo> getToDo() {
-        System.out.println("getToDo Service");
-        return repo.findAll();//listMyApps;
+        return repo.findAll();
     }
 
     public List<MyToDo> getBoardToDo() {
-        System.out.println("getBoardToDo Service");
-        return repo.findAll();//listMyApps;
+        return repo.findAll();
     }
 
     public MyToDo postToDo(MyToDoDTO myToDoDTO) {
@@ -43,13 +41,10 @@ public class MyService {
 
     public MyToDo getToDoWithId(String id) {
         MyToDo todo = repo.findById(id).orElse(null);
-        System.out.println("Gefundenes ToDo: " + todo);
         return todo;
     }
 
     public MyToDo putToDo(String id, MyToDoDTO myToDoDTO) {
-        System.out.println("Put From Client");
-
         MyToDo actualMyToDo = repo.findById(id).orElse(null);
 
         if (actualMyToDo != null) {
@@ -62,7 +57,6 @@ public class MyService {
     }
 
     public void deleteToDo(String id) {
-        System.out.println("delete From Client");
         repo.deleteById(id);
     }
 

@@ -57,4 +57,10 @@ public class MyController {
         System.out.println("Put From Client");
         return service.putToDo(id, myToDoDTO);
     }
+
+    @DeleteMapping("api/todo/{id}")
+    public void deleteToDo(@PathVariable String id) {
+        System.out.println("delete From Client");
+        service.deleteToDo(id);
+    }
 }

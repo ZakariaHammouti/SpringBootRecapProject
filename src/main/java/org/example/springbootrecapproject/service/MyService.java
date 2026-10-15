@@ -7,6 +7,7 @@ import org.example.springbootrecapproject.model.MyToDo;
 import org.example.springbootrecapproject.repository.MyRepo;
 import org.springframework.stereotype.Repository;
 import org.springframework.stereotype.Service;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 
 import java.util.List;
@@ -58,6 +59,11 @@ public class MyService {
         } else {
             throw new RuntimeException("id not found");
         }
+    }
+
+    public void deleteToDo(String id) {
+        System.out.println("delete From Client");
+        repo.deleteById(id);
     }
 
 }
